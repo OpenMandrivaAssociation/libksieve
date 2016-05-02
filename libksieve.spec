@@ -26,6 +26,7 @@ BuildRequires: sasl-devel
 BuildRequires: cmake(KF5AkonadiSearch)
 BuildRequires: cmake(KF5Mime)
 BuildRequires: cmake(Qt5UiTools)
+BuildRequires: cmake(KF5JobWidgets)
 
 %description
 KDE library for Sieve mail filtering
