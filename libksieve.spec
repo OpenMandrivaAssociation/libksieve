@@ -20,13 +20,32 @@ License: GPL
 Group: System/Libraries
 BuildRequires: cmake(ECM)
 BuildRequires: cmake(Qt5Core)
+BuildRequires: cmake(Qt5Gui)
 BuildRequires: cmake(Qt5Test)
 BuildRequires: cmake(Qt5Qml)
+BuildRequires: cmake(Qt5UiTools)
+BuildRequires: cmake(Qt5Widgets)
+BuildRequires: cmake(Qt5Xml)
+BuildRequires: cmake(Qt5WebKit)
+BuildRequires: cmake(Qt5WebKitWidgets)
 BuildRequires: sasl-devel
+BuildRequires: cmake(KF5Akonadi)
 BuildRequires: cmake(KF5AkonadiSearch)
 BuildRequires: cmake(KF5Mime)
-BuildRequires: cmake(Qt5UiTools)
 BuildRequires: cmake(KF5JobWidgets)
+BuildRequires: cmake(KF5Solid)
+BuildRequires: cmake(KF5PimCommon)
+BuildRequires: cmake(KF5MailTransport)
+BuildRequires: cmake(KF5I18n)
+BuildRequires: cmake(KF5IconThemes)
+BuildRequires: cmake(KF5Libkdepim)
+BuildRequires: cmake(KF5NewStuff)
+BuildRequires: cmake(KF5WindowSystem)
+BuildRequires: cmake(KF5Archive)
+BuildRequires: cmake(KF5IdentityManagement)
+BuildRequires: cmake(KF5PimTextEdit)
+BuildRequires: cmake(KF5CalendarCore)
+BuildRequires: cmake(KF5AkonadiContact)
 
 %description
 KDE library for Sieve mail filtering
