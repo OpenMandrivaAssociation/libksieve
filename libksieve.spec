@@ -12,7 +12,7 @@ Version:	16.04.0
 %endif
 # Used to be in kdepim, got to match
 Epoch:		3
-Release:	1
+Release:	2
 Source0: http://download.kde.org/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
 Summary: KDE library for Sieve mail filtering
 URL: http://kde.org/
@@ -62,6 +62,8 @@ KDE library for Sieve mail filtering
 Summary: Development files for %{name}
 Group: Development/C
 Requires: %{libname} = %{EVRD}
+Requires: %{mklibname KF5KManageSieve %{major}} = %{EVRD}
+Requires: %{mklibname KF5KSieveUi %{major}} = %{EVRD}
 
 %description -n %{devname}
 Development files (Headers etc.) for %{name}.
