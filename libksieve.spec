@@ -89,6 +89,9 @@ Development files (Headers etc.) for %{name}.
 %{_sysconfdir}/xdg/libksieve.categories
 %{_sysconfdir}/xdg/ksieve_script.knsrc
 %{_datadir}/sieve
+%{_libdir}/qt5/plugins/kf5/kio/sieve.so
+%{_datadir}/kservices5/sieve.protocol
+%doc %{_docdir}/HTML/en/kioslave5/sieve/index.*
 
 %files -n %{libname}
 %{_libdir}/libKF5KSieve.so.%{major}*
