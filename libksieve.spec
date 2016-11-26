@@ -28,6 +28,8 @@ BuildRequires: cmake(Qt5Widgets)
 BuildRequires: cmake(Qt5Xml)
 BuildRequires: cmake(Qt5WebKit)
 BuildRequires: cmake(Qt5WebKitWidgets)
+BuildRequires: cmake(KF5Akonadi)
+BuildRequires: boost-devel
 BuildRequires: sasl-devel
 BuildRequires: cmake(KF5Akonadi)
 BuildRequires: cmake(KF5AkonadiSearch)
@@ -48,7 +50,7 @@ BuildRequires: cmake(KF5CalendarCore)
 BuildRequires: cmake(KF5AkonadiContact)
 
 %description
-KDE library for Sieve mail filtering
+KDE library for Sieve mail filtering.
 
 %package -n %{libname}
 Summary: KDE library for Sieve mail filtering
@@ -56,7 +58,7 @@ Group: System/Libraries
 Requires: %{name} >= %{EVRD}
 
 %description -n %{libname}
-KDE library for Sieve mail filtering
+KDE library for Sieve mail filtering.
 
 %package -n %{devname}
 Summary: Development files for %{name}
@@ -74,10 +76,9 @@ Development files (Headers etc.) for %{name}.
 %prep
 %setup -q
 %apply_patches
+%cmake_kde5
 
 %build
-%cmake_kde5
-cd ../
 %ninja -C build
 
 %install
