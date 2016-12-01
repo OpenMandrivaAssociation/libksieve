@@ -49,7 +49,7 @@ BuildRequires: cmake(KF5IdentityManagement)
 BuildRequires: cmake(KF5PimTextEdit)
 BuildRequires: cmake(KF5CalendarCore)
 BuildRequires: cmake(KF5AkonadiContact)
-Conflicts: kio-sieve < 16.04.3-2
+Conflicts: kio-sieve < 3:16.04.3-2
 Obsoletes: kio-sieve < %{EVRD}
 Provides: kio-sieve = %{EVRD}
 
