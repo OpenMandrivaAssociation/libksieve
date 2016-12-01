@@ -49,6 +49,9 @@ BuildRequires: cmake(KF5IdentityManagement)
 BuildRequires: cmake(KF5PimTextEdit)
 BuildRequires: cmake(KF5CalendarCore)
 BuildRequires: cmake(KF5AkonadiContact)
+Conflicts: kio-sieve < 16.04.3-2
+Obsoletes: kio-sieve < %{EVRD}
+Provides: kio-sieve = %{EVRD}
 
 %description
 KDE library for Sieve mail filtering.
