@@ -3,7 +3,7 @@
 %define devname %mklibname KF5KSieve -d
 
 Name: libksieve
-Version:	16.12.1
+Version:	16.12.2
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -90,6 +90,7 @@ Development files (Headers etc.) for %{name}.
 
 %files
 %{_sysconfdir}/xdg/libksieve.categories
+%{_sysconfdir}/xdg/libksieve.renamecategories
 %{_sysconfdir}/xdg/ksieve_script.knsrc
 %{_datadir}/sieve
 %{_libdir}/qt5/plugins/kf5/kio/sieve.so
