@@ -3,7 +3,7 @@
 %define devname %mklibname KF5KSieve -d
 
 Name: libksieve
-Version:	16.12.2
+Version:	17.04.0
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -87,8 +87,11 @@ Development files (Headers etc.) for %{name}.
 
 %install
 %ninja_install -C build
+%find_lang kio_sieve
+%find_lang libksieve
+cat *.lang >all.lang
 
-%files
+%files -f all.lang
 %{_sysconfdir}/xdg/libksieve.categories
 %{_sysconfdir}/xdg/libksieve.renamecategories
 %{_sysconfdir}/xdg/ksieve_script.knsrc
@@ -96,6 +99,16 @@ Development files (Headers etc.) for %{name}.
 %{_libdir}/qt5/plugins/kf5/kio/sieve.so
 %{_datadir}/kservices5/sieve.protocol
 %doc %{_docdir}/HTML/en/kioslave5/sieve/index.*
+%lang(ca) %doc %{_docdir}/HTML/ca/kioslave5/sieve/index.*
+%lang(de) %doc %{_docdir}/HTML/de/kioslave5/sieve/index.*
+%lang(es) %doc %{_docdir}/HTML/es/kioslave5/sieve/index.*
+%lang(it) %doc %{_docdir}/HTML/it/kioslave5/sieve/index.*
+%lang(nl) %doc %{_docdir}/HTML/nl/kioslave5/sieve/index.*
+%lang(pt_BR) %doc %{_docdir}/HTML/pt_BR/kioslave5/sieve/index.*
+%lang(ru) %doc %{_docdir}/HTML/ru/kioslave5/sieve/index.*
+%lang(sr) %doc %{_docdir}/HTML/sr/kioslave5/sieve/index.*
+%lang(sv) %doc %{_docdir}/HTML/sv/kioslave5/sieve/index.*
+%lang(uk) %doc %{_docdir}/HTML/uk/kioslave5/sieve/index.*
 
 %files -n %{libname}
 %{_libdir}/libKF5KSieve.so.%{major}*
