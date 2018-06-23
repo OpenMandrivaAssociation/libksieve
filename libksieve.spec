@@ -30,7 +30,6 @@ BuildRequires: cmake(Qt5WebKit)
 BuildRequires: cmake(Qt5WebKitWidgets)
 BuildRequires: cmake(Qt5WebEngineWidgets)
 BuildRequires: cmake(Qt5WebEngine)
-BuildRequires: cmake(KF5Akonadi)
 BuildRequires: boost-devel
 BuildRequires: sasl-devel
 BuildRequires: cmake(KF5Akonadi)
@@ -50,7 +49,11 @@ BuildRequires: cmake(KF5IdentityManagement)
 BuildRequires: cmake(KF5PimTextEdit)
 BuildRequires: cmake(KF5CalendarCore)
 BuildRequires: cmake(KF5AkonadiContact)
-BuildRequires:	cmake(KF5DocTools)
+BuildRequires: cmake(KF5DocTools)
+BuildRequires: cmake(KF5KIO)
+BuildRequires: cmake(KF5SyntaxHighlighting)
+BuildRequires: cmake(KF5IMAP)
+
 
 Conflicts: kio-sieve < 3:16.04.3-2
 Obsoletes: kio-sieve < %{EVRD}
