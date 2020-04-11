@@ -14,6 +14,7 @@ Version:	20.03.90
 Epoch:		3
 Release:	2
 Source0: http://download.kde.org/%{ftpdir}/release-service/%{version}/src/%{name}-%{version}.tar.xz
+Patch0: libksieve-20.03.90-compile.patch
 Summary: KDE library for Sieve mail filtering
 URL: http://kde.org/
 License: GPL
@@ -82,8 +83,7 @@ Development files (Headers etc.) for %{name}.
 %libpackage KF5KSieveUi %{major}
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -p1
 %cmake_kde5
 
 %build

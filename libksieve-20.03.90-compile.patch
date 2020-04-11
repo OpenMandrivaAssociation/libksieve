@@ -1,0 +1,12 @@
+diff -up libksieve-20.03.90/src/ksieveui/vacation/vacationeditwidget.cpp.omv~ libksieve-20.03.90/src/ksieveui/vacation/vacationeditwidget.cpp
+--- libksieve-20.03.90/src/ksieveui/vacation/vacationeditwidget.cpp.omv~	2020-04-11 15:52:43.113689735 +0200
++++ libksieve-20.03.90/src/ksieveui/vacation/vacationeditwidget.cpp	2020-04-11 15:52:47.689742836 +0200
+@@ -190,7 +190,7 @@ VacationEditWidget::VacationEditWidget(Q
+         mMailAction->addItem(VacationUtils::mailAction(static_cast<VacationUtils::MailAction>(i)));
+     }
+     mMailAction->setObjectName(QStringLiteral("mMailAction"));
+-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
++#if QT_VERSION <= QT_VERSION_CHECK(5, 15, 0)
+     connect(mMailAction, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &VacationEditWidget::mailActionChanged);
+ #else
+     connect(mMailAction, QOverload<int, const QString &>::of(&QComboBox::currentIndexChanged), this, &VacationEditWidget::mailActionChanged);
