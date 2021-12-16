@@ -51,7 +51,9 @@ BuildRequires: cmake(KF5DocTools)
 BuildRequires: cmake(KF5KIO)
 BuildRequires: cmake(KF5SyntaxHighlighting)
 BuildRequires: cmake(KF5IMAP)
-
+# For QCH format docs
+BuildRequires: doxygen
+BuildRequires: qt5-assistant
 
 Conflicts: kio-sieve < 3:16.04.3-2
 Obsoletes: kio-sieve < %{EVRD}
