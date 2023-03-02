@@ -74,8 +74,8 @@ KDE library for Sieve mail filtering.
 Summary: Development files for %{name}
 Group: Development/C
 Requires: %{libname} = %{EVRD}
-Requires: %{mklibname KF5KManageSieve %{major}} = %{EVRD}
-Requires: %{mklibname KF5KSieveUi %{major}} = %{EVRD}
+Requires: %{mklibname KF5KManageSieve} = %{EVRD}
+Requires: %{mklibname KF5KSieveUi} = %{EVRD}
 
 %description -n %{devname}
 Development files (Headers etc.) for %{name}.
