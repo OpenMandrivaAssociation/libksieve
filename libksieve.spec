@@ -12,7 +12,7 @@ Version:	22.12.3
 %endif
 # Used to be in kdepim, got to match
 Epoch:		3
-Release:	1
+Release:	2
 Source0: http://download.kde.org/%{ftpdir}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 Summary: KDE library for Sieve mail filtering
 URL: http://kde.org/
