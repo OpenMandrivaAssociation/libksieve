@@ -1,9 +1,11 @@
 %define major 5
-%define libname %mklibname KF5KSieve %{major}
-%define devname %mklibname KF5KSieve -d
+%define oldlibname %mklibname KF5KSieve 5
+%define olddevname %mklibname KF5KSieve -d
+%define libname %mklibname KPim5KSieve %{major}
+%define devname %mklibname KPim5KSieve -d
 
 Name: libksieve
-Version:	22.12.3
+Version:	23.03.90
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -12,7 +14,7 @@ Version:	22.12.3
 %endif
 # Used to be in kdepim, got to match
 Epoch:		3
-Release:	2
+Release:	1
 Source0: http://download.kde.org/%{ftpdir}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 Summary: KDE library for Sieve mail filtering
 URL: http://kde.org/
@@ -66,6 +68,9 @@ KDE library for Sieve mail filtering.
 Summary: KDE library for Sieve mail filtering
 Group: System/Libraries
 Requires: %{name} >= %{EVRD}
+%rename %{oldlibname}
+Obsoletes: %{mklibname KF5KManageSieve} < %{EVRD}
+Obsoletes: %{mklibname KF5KSieveUi} < %{EVRD}
 
 %description -n %{libname}
 KDE library for Sieve mail filtering.
@@ -74,14 +79,15 @@ KDE library for Sieve mail filtering.
 Summary: Development files for %{name}
 Group: Development/C
 Requires: %{libname} = %{EVRD}
-Requires: %{mklibname KF5KManageSieve} = %{EVRD}
-Requires: %{mklibname KF5KSieveUi} = %{EVRD}
+Requires: %{mklibname KPim5KManageSieve} = %{EVRD}
+Requires: %{mklibname KPim5KSieveUi} = %{EVRD}
+%rename %{olddevname}
 
 %description -n %{devname}
 Development files (Headers etc.) for %{name}.
 
-%libpackage KF5KManageSieve %{major}
-%libpackage KF5KSieveUi %{major}
+%libpackage KPim5KManageSieve %{major}
+%libpackage KPim5KSieveUi %{major}
 
 %prep
 %autosetup -p1
@@ -101,7 +107,7 @@ Development files (Headers etc.) for %{name}.
 %{_datadir}/sieve
 
 %files -n %{libname}
-%{_libdir}/libKF5KSieve.so.%{major}*
+%{_libdir}/libKPim5KSieve.so.%{major}*
 
 %files -n %{devname}
 %{_includedir}/*
