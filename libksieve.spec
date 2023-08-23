@@ -5,7 +5,7 @@
 %define devname %mklibname KPim5KSieve -d
 
 Name: libksieve
-Version:	23.04.3
+Version:	23.08.0
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -32,27 +32,27 @@ BuildRequires: cmake(Qt5WebEngineWidgets)
 BuildRequires: cmake(Qt5WebEngine)
 BuildRequires: boost-devel
 BuildRequires: sasl-devel
-BuildRequires: cmake(KF5Akonadi)
-BuildRequires: cmake(KF5AkonadiSearch)
-BuildRequires: cmake(KF5Mime)
 BuildRequires: cmake(KF5JobWidgets)
 BuildRequires: cmake(KF5Solid)
-BuildRequires: cmake(KF5PimCommon)
-BuildRequires: cmake(KF5MailTransport)
 BuildRequires: cmake(KF5I18n)
 BuildRequires: cmake(KF5IconThemes)
-BuildRequires: cmake(KF5Libkdepim)
 BuildRequires: cmake(KF5NewStuff)
 BuildRequires: cmake(KF5WindowSystem)
 BuildRequires: cmake(KF5Archive)
-BuildRequires: cmake(KF5IdentityManagement)
-BuildRequires: cmake(KF5PimTextEdit)
 BuildRequires: cmake(KF5CalendarCore)
-BuildRequires: cmake(KF5AkonadiContact)
 BuildRequires: cmake(KF5DocTools)
 BuildRequires: cmake(KF5KIO)
 BuildRequires: cmake(KF5SyntaxHighlighting)
-BuildRequires: cmake(KF5IMAP)
+BuildRequires: cmake(KPim5Akonadi)
+BuildRequires: cmake(KPim5AkonadiSearch)
+BuildRequires: cmake(KPim5Mime)
+BuildRequires: cmake(KPim5PimCommon)
+BuildRequires: cmake(KPim5MailTransport)
+BuildRequires: cmake(KPim5Libkdepim)
+BuildRequires: cmake(KPim5IdentityManagement)
+BuildRequires: cmake(KF5PimTextEdit)
+BuildRequires: cmake(KPim5AkonadiContact)
+BuildRequires: cmake(KPim5IMAP)
 # For QCH format docs
 BuildRequires: doxygen
 BuildRequires: qt5-assistant
