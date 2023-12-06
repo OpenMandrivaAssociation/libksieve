@@ -52,6 +52,7 @@ BuildRequires: cmake(KPim6Libkdepim)
 BuildRequires: cmake(KPim6IdentityManagementCore)
 BuildRequires: cmake(KPim6AkonadiContactCore)
 BuildRequires: cmake(KPim6IMAP)
+BuildRequires: cmake(KF6TextUtils)
 # For QCH format docs
 BuildRequires: doxygen
 BuildRequires: qt6-qttools-assistant
