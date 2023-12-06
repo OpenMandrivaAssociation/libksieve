@@ -10,8 +10,6 @@ Version:	24.01.80
 %else
 %define ftpdir stable
 %endif
-# Used to be in kdepim, got to match
-Epoch:		3
 Release:	1
 Source0: http://download.kde.org/%{ftpdir}/release-service/%{version}/src/libksieve-%{version}.tar.xz
 Summary: KDE library for Sieve mail filtering
@@ -19,6 +17,7 @@ URL: http://kde.org/
 License: GPL
 Group: System/Libraries
 BuildRequires: cmake(ECM)
+BuildRequires: cmake(Qt6)
 BuildRequires: cmake(Qt6Core)
 BuildRequires: cmake(Qt6Gui)
 BuildRequires: cmake(Qt6Test)
@@ -53,10 +52,6 @@ BuildRequires: cmake(KPim6IMAP)
 # For QCH format docs
 BuildRequires: doxygen
 BuildRequires: qt6-qttools-assistant
-
-Conflicts: kio-sieve < 3:16.04.3-2
-Obsoletes: kio-sieve < %{EVRD}
-Provides: kio-sieve = %{EVRD}
 
 %description
 KDE library for Sieve mail filtering.
