@@ -1,17 +1,24 @@
+%define git 20240217
+%define gitbranch release/24.02
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 %define major 6
 %define libname %mklibname KPim6KSieve
 %define devname %mklibname KPim6KSieve -d
 
 Name: plasma6-libksieve
-Version:	24.01.95
+Version:	24.01.96
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
 %else
 %define ftpdir stable
 %endif
-Release:	1
+Release:	%{?git:0.%{git}.}1
+%if 0%{?git:1}
+Source0:	https://invent.kde.org/pim/libksieve/-/archive/%{gitbranch}/libksieve-%{gitbranchd}.tar.bz2#/libksieve-%{git}.tar.bz2
+%else
 Source0: http://download.kde.org/%{ftpdir}/release-service/%{version}/src/libksieve-%{version}.tar.xz
+%endif
 Summary: KDE library for Sieve mail filtering
 URL: http://kde.org/
 License: GPL
@@ -79,13 +86,11 @@ Requires: %{mklibname KPim6KSieveUi} = %{EVRD}
 Development files (Headers etc.) for %{name}.
 
 %libpackage KPim6KManageSieve %{major}
-%{_libdir}/libKPim6KManageSieve.so.5*
 
 %libpackage KPim6KSieveUi %{major}
-%{_libdir}/libKPim6KSieveUi.so.5*
 
 %prep
-%autosetup -p1 -n libksieve-%{version}
+%autosetup -p1 -n libksieve-%{?git:%{gitbranchd}}%{!?git:%{version}}
 %cmake \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
 	-G Ninja
@@ -105,9 +110,7 @@ Development files (Headers etc.) for %{name}.
 
 %files -n %{libname}
 %{_libdir}/libKPim6KSieveCore.so.%{major}*
-%{_libdir}/libKPim6KSieveCore.so.5*
 %{_libdir}/libKPim6KSieve.so.%{major}*
-%{_libdir}/libKPim6KSieve.so.5*
 
 %files -n %{devname}
 %{_includedir}/*
