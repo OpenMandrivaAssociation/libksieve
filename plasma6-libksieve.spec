@@ -20,7 +20,7 @@ Source0:	https://invent.kde.org/pim/libksieve/-/archive/%{gitbranch}/libksieve-%
 Source0: http://download.kde.org/%{ftpdir}/release-service/%{version}/src/libksieve-%{version}.tar.xz
 %endif
 Summary: KDE library for Sieve mail filtering
-URL: http://kde.org/
+URL: https://kde.org/
 License: GPL
 Group: System/Libraries
 BuildRequires: cmake(ECM)
