@@ -5,7 +5,7 @@
 %define libname %mklibname KPim6KSieve
 %define devname %mklibname KPim6KSieve -d
 
-Name: plasma6-libksieve
+Name: libksieve
 Version:	25.04.0
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
