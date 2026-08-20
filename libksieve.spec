@@ -6,7 +6,7 @@
 %define devname %mklibname KPim6KSieve -d
 
 Name: libksieve
-Version:	26.04.3
+Version:	26.08.0
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -52,7 +52,7 @@ BuildRequires: cmake(KF6SyntaxHighlighting)
 BuildRequires: cmake(KF6TextAddonsWidgets)
 BuildRequires: cmake(KPim6Akonadi)
 BuildRequires: cmake(KPim6AkonadiSearch)
-BuildRequires: cmake(KPim6Mime)
+BuildRequires: cmake(KF6Mime)
 BuildRequires: cmake(KPim6PimCommon)
 BuildRequires: cmake(KPim6MailTransport)
 BuildRequires: cmake(KPim6Libkdepim)
@@ -65,6 +65,7 @@ BuildRequires: doxygen
 BuildRequires: qt6-qttools-assistant
 
 BuildSystem:	cmake
+BuildOption:	-DBUILD_PYTHON_BINDINGS:BOOL=OFF
 BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %rename plasma6-libksieve
